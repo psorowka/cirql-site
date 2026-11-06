@@ -1,23 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cirql – Interval timer for iPhone and Apple Watch</title>
+<title data-en="Cirql – Interval timer for iPhone and Apple Watch" data-de="Cirql – Intervall-Timer für iPhone und Apple Watch">Cirql – Interval timer for iPhone and Apple Watch</title>
 <meta name="description" content="Cirql is a super simple interval timer for iPhone and Apple Watch. No ads, no tracking, nothing leaves your iPhone.">
 <link rel="stylesheet" href="style.css">
+<script src="lang.js"></script>
 </head>
 <body><main>
+<div class="topbar"><nav><a href="index.html" aria-current="page"><span class="en">Home</span><span class="de">Start</span></a><a href="support.html">Support</a><a href="privacy.html"><span class="en">Privacy</span><span class="de">Datenschutz</span></a><a href="impressum.html"><span class="en">Legal notice</span><span class="de">Impressum</span></a></nav><div class="lang" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="de">DE</button></div></div>
 <h1>Cirql<span>.</span></h1>
-<p class="lead">Everything you always wanted in an interval timer. No more, no less.</p>
-<nav><a href="support.html">Support</a><a href="privacy.html">Privacy / Datenschutz</a><a href="impressum.html">Impressum</a></nav>
-
-
+<p class="lead"><span class="en">Everything you always wanted in an interval timer. No more, no less.</span><span class="de">Alles, was du dir von einem Intervall-Timer wünschst. Nicht mehr, nicht weniger.</span></p>
 <div class="clock" id="clock" aria-label="Current time">
 <div class="top"><span id="phase">GO!</span><span id="sec">0:00</span></div>
 <div class="time" id="time">00:00<small>:00</small></div>
 <div class="bar"><i id="bar"></i></div>
 </div>
-
+<div class="en">
 <div class="card">
 <h3>Super simple, no clutter</h3>
 <p>Set work time, rest time and rounds. Tap start. Huge numbers, big buttons, high contrast.</p>
@@ -26,31 +25,38 @@
 <h3>Private by design</h3>
 <p>No ads, no tracking, no accounts. Nothing leaves your iPhone.</p>
 </div>
-
-<div class="shots-head"><h2 style="margin:40px 0 0">Screenshots</h2>
-<div class="lang"><button id="b-en" class="on" type="button">EN</button> <button id="b-de" type="button">DE</button></div></div>
-<div class="shots" id="s-en">
+</div>
+<div class="de">
+<div class="card">
+<h3>Super einfach, ohne Ballast</h3>
+<p>Trainingszeit, Pause und Runden einstellen. Start tippen. Riesige Zahlen, große Knöpfe, hoher Kontrast.</p>
+<h3>Volle Apple-Watch-Integration</h3>
+<p>Training an iPhone oder Watch einstellen, starten und steuern – immer synchron, mit Haptik bei jedem Wechsel.</p>
+<h3>Privat, von Grund auf</h3>
+<p>Keine Werbung, kein Tracking, kein Konto. Nichts verlässt dein iPhone.</p>
+</div>
+</div>
+<h2>Screenshots</h2>
+<div class="shots en">
 <img src="img/en-1-setup.jpg" alt="Set work time, rest time and rounds" loading="lazy">
 <img src="img/en-2-work.jpg" alt="Work phase with huge countdown" loading="lazy">
 <img src="img/en-3-rest.jpg" alt="Rest phase" loading="lazy">
 <img src="img/en-4-lock.jpg" alt="Live Activity on the lock screen" loading="lazy">
 <img src="img/en-5-done.jpg" alt="Workout done" loading="lazy">
 </div>
-<div class="shots hide" id="s-de">
+<div class="shots de">
 <img src="img/de-1-setup.jpg" alt="Trainingszeit, Pause und Runden einstellen" loading="lazy">
 <img src="img/de-2-work.jpg" alt="Trainingsphase mit riesigem Countdown" loading="lazy">
 <img src="img/de-3-rest.jpg" alt="Pausenphase" loading="lazy">
 <img src="img/de-4-lock.jpg" alt="Live Activity auf dem Sperrbildschirm" loading="lazy">
 <img src="img/de-5-done.jpg" alt="Training geschafft" loading="lazy">
 </div>
-
 <hr>
-<p class="lead">Alles, was du dir von einem Intervall-Timer wünschst. Nicht mehr, nicht weniger.</p>
-<p>Cirql ist ein super einfacher Intervall-Timer für iPhone und Apple Watch. Keine Werbung, kein Tracking, nichts verlässt dein iPhone.</p>
-
+<p class="en">Cirql is a super simple interval timer for iPhone and Apple Watch. No ads, no tracking, nothing leaves your iPhone.</p>
+<p class="de">Cirql ist ein super einfacher Intervall-Timer für iPhone und Apple Watch. Keine Werbung, kein Tracking, nichts verlässt dein iPhone.</p>
 <footer>© 2026 Peter Axel Sorowka</footer>
-
 <script>
+
 (function(){
   var c=document.getElementById('clock'),t=document.getElementById('time'),ph=document.getElementById('phase'),sc=document.getElementById('sec'),bar=document.getElementById('bar');
   var p=function(n){return (n<10?'0':'')+n};
@@ -64,10 +70,6 @@
     bar.style.width=((work?pos/20:(pos-20)/10)*100)+'%';
   }
   tick(); setInterval(tick,100);
-  var en=document.getElementById('s-en'),de=document.getElementById('s-de'),be=document.getElementById('b-en'),bd=document.getElementById('b-de');
-  function lang(l){en.classList.toggle('hide',l!=='en');de.classList.toggle('hide',l!=='de');be.classList.toggle('on',l==='en');bd.classList.toggle('on',l==='de');}
-  be.onclick=function(){lang('en')};bd.onclick=function(){lang('de')};
-  if((navigator.language||'').slice(0,2)==='de')lang('de');
-})();
+  })();
 </script>
 </main></body></html>
