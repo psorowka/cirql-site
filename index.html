@@ -9,7 +9,7 @@
 <script src="lang.js"></script>
 </head>
 <body><main>
-<div class="topbar"><nav><a href="index.html" aria-current="page"><span class="en">Home</span><span class="de">Start</span></a><a href="support.html">Support</a><a href="privacy.html"><span class="en">Privacy</span><span class="de">Datenschutz</span></a><a href="impressum.html"><span class="en">Legal notice</span><span class="de">Impressum</span></a></nav><div class="lang" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="de">DE</button></div></div>
+<div class="topbar"><nav><a href="index.html" aria-current="page"><span class="en">Home</span><span class="de">Start</span></a><a href="pricing.html"><span class="en">Pricing</span><span class="de">Preis</span></a><a href="support.html">Support</a><a href="privacy.html"><span class="en">Privacy</span><span class="de">Datenschutz</span></a><a href="impressum.html"><span class="en">Legal notice</span><span class="de">Impressum</span></a></nav><div class="lang" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="de">DE</button></div></div>
 <h1>Cirql<span>.</span></h1>
 <p class="lead"><span class="en">Everything you always wanted in an interval timer. No more, no less.</span><span class="de">Alles, was du dir von einem Intervall-Timer wünschst. Nicht mehr, nicht weniger.</span></p>
 <div class="clock" id="clock" aria-label="Current time">
@@ -23,6 +23,8 @@
 <p>Set work time, rest time and rounds. Tap start. Huge numbers, big buttons, high contrast.</p>
 <h3>Full Apple Watch integration</h3>
 <p>Set up, start and control your workout from iPhone or Watch – always in sync, with haptics at every change.</p>
+<h3>Fair, simple pricing</h3>
+<p>Try it free for 30 days, then unlock it once for €1.49. No subscription, no ads. Family Sharing is supported: one purchase covers your whole family. <span class="early">Installed in November 2026 or earlier? Cirql stays free for you forever.</span></p>
 <h3>Private by design</h3>
 <p>No ads, no tracking, no accounts. Nothing leaves your iPhone.</p>
 </div>
@@ -33,6 +35,8 @@
 <p>Trainingszeit, Pause und Runden einstellen. Start tippen. Riesige Zahlen, große Knöpfe, hoher Kontrast.</p>
 <h3>Volle Apple-Watch-Integration</h3>
 <p>Training an iPhone oder Watch einstellen, starten und steuern – immer synchron, mit Haptik bei jedem Wechsel.</p>
+<h3>Fairer, einfacher Preis</h3>
+<p>30 Tage kostenlos testen, danach einmalig für 1,49 € freischalten. Kein Abo, keine Werbung. Mit Familienfreigabe: ein Kauf gilt für die ganze Familie. <span class="early">Im November 2026 oder früher installiert? Dann bleibt Cirql für dich für immer kostenlos.</span></p>
 <h3>Privat, von Grund auf</h3>
 <p>Keine Werbung, kein Tracking, kein Konto. Nichts verlässt dein iPhone.</p>
 </div>
@@ -57,6 +61,8 @@
 <p class="de">Cirql ist ein super einfacher Intervall-Timer für iPhone und Apple Watch. Keine Werbung, kein Tracking, nichts verlässt dein iPhone.</p>
 <footer>© 2026 Peter Sorowka</footer>
 <script>
+// Early-Adopter-Hinweis verschwindet automatisch ab 1. Dezember 2026 (UTC).
+if (Date.now() >= Date.UTC(2026, 11, 1)) document.querySelectorAll('.early').forEach(function (e) { e.remove(); });
 
 (function(){
   var c=document.getElementById('clock'),t=document.getElementById('time'),ph=document.getElementById('phase'),sc=document.getElementById('sec'),bar=document.getElementById('bar');
