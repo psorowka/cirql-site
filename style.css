@@ -14,3 +14,21 @@ a { color: var(--lime); }
 nav a { margin-right: 18px; }
 hr { border: 0; border-top: 1px solid #2a2a2a; margin: 48px 0; }
 footer { color: var(--dim); font-size: 14px; margin-top: 56px; }
+
+/* Live clock, styled like the app's run screen */
+.clock { --c: var(--lime); background: var(--c); color:#000; border-radius: 28px; padding: 18px 22px 22px; margin: 28px 0; transition: background .25s; }
+.clock.rest { --c:#00e5ff; }
+.clock .top { display:flex; justify-content:space-between; font: 900 20px/1 "Arial Narrow","Helvetica Neue",Arial,sans-serif; letter-spacing:.04em; text-transform:uppercase; }
+.clock .time { font: 900 clamp(72px, 22vw, 150px)/1 "Arial Narrow","Helvetica Neue",Arial,sans-serif; letter-spacing:.01em; text-align:center; margin: 14px 0 10px; font-variant-numeric: tabular-nums; }
+.clock .time small { font-size:.42em; opacity:.55; }
+.clock .bar { height:14px; background: rgba(0,0,0,.18); border-radius: 8px; overflow:hidden; }
+.clock .bar i { display:block; height:100%; width:0; background:#000; border-radius:8px; }
+
+/* Screenshots */
+.shots-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.lang button { background:var(--panel); color:var(--dim); border:1px solid #2a2a2a; border-radius:999px; padding:6px 14px; font:inherit; font-size:14px; cursor:pointer; }
+.lang button.on { color:#000; background:var(--lime); border-color:var(--lime); font-weight:700; }
+.shots { display:flex; gap:14px; overflow-x:auto; padding:6px 2px 18px; margin: 12px -24px 0; padding-left:24px; padding-right:24px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
+.shots img { height: 460px; width:auto; border-radius: 22px; flex:0 0 auto; scroll-snap-align:start; background:var(--panel); }
+.shots.hide { display:none; }
+@media (prefers-reduced-motion: reduce) { .clock { transition:none; } }

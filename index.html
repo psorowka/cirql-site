@@ -11,6 +11,13 @@
 <p class="lead">Everything you always wanted in an interval timer. No more, no less.</p>
 <nav><a href="support.html">Support</a><a href="privacy.html">Privacy / Datenschutz</a><a href="impressum.html">Impressum</a></nav>
 
+
+<div class="clock" id="clock" aria-label="Current time">
+<div class="top"><span id="phase">GO!</span><span id="sec">0:00</span></div>
+<div class="time" id="time">00:00<small>:00</small></div>
+<div class="bar"><i id="bar"></i></div>
+</div>
+
 <div class="card">
 <h3>Super simple, no clutter</h3>
 <p>Set work time, rest time and rounds. Tap start. Huge numbers, big buttons, high contrast.</p>
@@ -20,9 +27,47 @@
 <p>No ads, no tracking, no accounts. Nothing leaves your iPhone.</p>
 </div>
 
+<div class="shots-head"><h2 style="margin:40px 0 0">Screenshots</h2>
+<div class="lang"><button id="b-en" class="on" type="button">EN</button> <button id="b-de" type="button">DE</button></div></div>
+<div class="shots" id="s-en">
+<img src="img/en-1-setup.jpg" alt="Set work time, rest time and rounds" loading="lazy">
+<img src="img/en-2-work.jpg" alt="Work phase with huge countdown" loading="lazy">
+<img src="img/en-3-rest.jpg" alt="Rest phase" loading="lazy">
+<img src="img/en-4-lock.jpg" alt="Live Activity on the lock screen" loading="lazy">
+<img src="img/en-5-done.jpg" alt="Workout done" loading="lazy">
+</div>
+<div class="shots hide" id="s-de">
+<img src="img/de-1-setup.jpg" alt="Trainingszeit, Pause und Runden einstellen" loading="lazy">
+<img src="img/de-2-work.jpg" alt="Trainingsphase mit riesigem Countdown" loading="lazy">
+<img src="img/de-3-rest.jpg" alt="Pausenphase" loading="lazy">
+<img src="img/de-4-lock.jpg" alt="Live Activity auf dem Sperrbildschirm" loading="lazy">
+<img src="img/de-5-done.jpg" alt="Training geschafft" loading="lazy">
+</div>
+
 <hr>
 <p class="lead">Alles, was du dir von einem Intervall-Timer wünschst. Nicht mehr, nicht weniger.</p>
 <p>Cirql ist ein super einfacher Intervall-Timer für iPhone und Apple Watch. Keine Werbung, kein Tracking, nichts verlässt dein iPhone.</p>
 
 <footer>© 2026 Peter Axel Sorowka</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('clock'),t=document.getElementById('time'),ph=document.getElementById('phase'),sc=document.getElementById('sec'),bar=document.getElementById('bar');
+  var p=function(n){return (n<10?'0':'')+n};
+  function tick(){
+    var d=new Date(),s=d.getSeconds(),ms=d.getMilliseconds(),pos=(s%30)+ms/1000,work=pos<20;
+    t.innerHTML=p(d.getHours())+':'+p(d.getMinutes())+'<small>:'+p(s)+'</small>';
+    c.classList.toggle('rest',!work);
+    ph.textContent=work?'GO!':'REST';
+    var left=Math.ceil(work?20-pos:30-pos);
+    sc.textContent='0:'+p(left);
+    bar.style.width=((work?pos/20:(pos-20)/10)*100)+'%';
+  }
+  tick(); setInterval(tick,100);
+  var en=document.getElementById('s-en'),de=document.getElementById('s-de'),be=document.getElementById('b-en'),bd=document.getElementById('b-de');
+  function lang(l){en.classList.toggle('hide',l!=='en');de.classList.toggle('hide',l!=='de');be.classList.toggle('on',l==='en');bd.classList.toggle('on',l==='de');}
+  be.onclick=function(){lang('en')};bd.onclick=function(){lang('de')};
+  if((navigator.language||'').slice(0,2)==='de')lang('de');
+})();
+</script>
 </main></body></html>
