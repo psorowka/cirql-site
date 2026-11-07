@@ -38,3 +38,11 @@ html[data-lang="en"] .de, html[data-lang="de"] .en { display: none !important; }
 .lang { display:flex; gap:6px; }
 
 nav a[aria-current="page"] { text-decoration: none; border-bottom: 2px solid var(--lime); }
+
+.stores { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin: 0 0 8px; }
+.stores .badge { display:inline-flex; align-items:center; height:54px; text-decoration:none; }
+.stores .badge img { height:54px; width:auto; display:block; }
+.stores .badge.garmin { box-sizing:border-box; gap:10px; padding:0 18px 0 14px; background:#000; color:#fff; border:1px solid #a6a6a6; border-radius:10px; }
+.stores .badge.garmin .logo { height:16px; width:auto; }
+.stores .badge.garmin > span { display:flex; flex-direction:column; font: 600 19px/1.1 -apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif; }
+.stores .badge.garmin small { font-size:11px; font-weight:400; letter-spacing:.02em; }
