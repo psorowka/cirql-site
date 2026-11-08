@@ -29,6 +29,7 @@ footer { color: var(--dim); font-size: 14px; margin-top: 56px; }
 .lang button.on { color:#000; background:var(--lime); border-color:var(--lime); font-weight:700; }
 .shots { display:flex; gap:14px; overflow-x:auto; padding:6px 2px 18px; margin: 12px -24px 0; padding-left:24px; padding-right:24px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
 .shots img { height: 460px; width:auto; border-radius: 22px; flex:0 0 auto; scroll-snap-align:start; background:var(--panel); }
+.shots.watch img { height: 300px; width:auto; border-radius: 28px; }
 .shots.garmin img { height: 300px; width: 300px; border-radius: 50%; }
 @media (prefers-reduced-motion: reduce) { .clock { transition:none; } }
 
